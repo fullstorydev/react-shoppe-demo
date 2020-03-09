@@ -1,8 +1,11 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 const Cart = () => {
   return (
-    <h1>Cart</h1>
+    <Container>
+      <h1>Cart</h1>
+    </Container>
   );
 };
 
