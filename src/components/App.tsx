@@ -1,9 +1,9 @@
 import React from 'react';
-import Products from './Products';
-import Checkout from './Checkout';
-import Cart from './Cart';
-import ThankYou from './ThankYou';
 import { Switch, Route } from 'react-router-dom';
+import Cart from './Cart';
+import Checkout from './Checkout';
+import Products from './Products';
+import ThankYou from './ThankYou';
 
 function App() {
   return (
