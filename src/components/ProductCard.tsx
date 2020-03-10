@@ -1,9 +1,9 @@
 import React from 'react';
-import { Product } from "../types/product";
 import {
   Card,
   Button,
 } from 'react-bootstrap';
+import { Product } from "../types/product";
 
 type Props = {
   product: Product
