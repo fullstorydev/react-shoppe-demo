@@ -1,11 +1,18 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import ProductGrid from './ProductGrid';
+import { getProducts } from '../services/product';
+import { Product } from "../types/product";
 
 const Products = () => {
-  return (
-    <Container>
-      <h1>Products</h1>
-    </Container>    
+  const [productList, setProductList] = useState([] as Product[]);
+
+  useEffect(() => {
+    // TODO: wire this in through a Redux action
+    getProducts().then(products => setProductList(products));
+  }, []);
+
+  return(
+    <ProductGrid productList={ productList } />
   );
 };
 
