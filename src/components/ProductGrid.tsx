@@ -15,7 +15,6 @@ type ProductGridProps = {
 const BOOTSTRAP_GRID_WIDTH = 12;
 
 const ProductGrid = ({ productList, columnCount = 3 }: ProductGridProps) => {
-  // TODO: gaurd against columnCount being set to 0
   let productRows: Product[][] = [];
   let productColumns: Product[] = [];
   productList.forEach(product => {    
@@ -36,7 +35,8 @@ const ProductGrid = ({ productList, columnCount = 3 }: ProductGridProps) => {
           <Row key={i}>
             { productColumn.map((product, j) => {
               return (
-              <Col key={j} md={Math.ceil(BOOTSTRAP_GRID_WIDTH / columnCount)}>
+              // gaurd against columnCount being set to 0 or a negative number
+              <Col key={j} md={Math.ceil(BOOTSTRAP_GRID_WIDTH / (columnCount <= 0 ? 1 : columnCount))}>
                 <ProductCard product={product} />
               </Col>);
             })}
