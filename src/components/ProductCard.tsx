@@ -3,26 +3,17 @@ import {
   Card,
   Button,
 } from 'react-bootstrap';
-import { connect, ConnectedProps } from 'react-redux'
+import { connect, ConnectedProps, useDispatch } from 'react-redux'
 import { addToCart } from '../actions/cart';
 import { Product } from '../types/product';
+import { AppDispatch } from '../actions';
 
-const mapDispatch = {
-  onAddToCart: (product: Product) => addToCart(product),
-};
-
-const connector = connect(
-  null,
-  mapDispatch
-);
-
-type PropsFromRedux = ConnectedProps<typeof connector>;
-
-type Props = PropsFromRedux & {
+type Props = {
   product: Product
 };
 
-const ProductCard = ({ onAddToCart, product }: Props) => {  
+const ProductCard: React.FC<Props> = ({ product }) => {  
+  const dispatch = useDispatch<AppDispatch>();
   return(
     <Card>
       <div style={{backgroundImage: `url(${product.image})`}} className="product-image"></div>
@@ -32,10 +23,10 @@ const ProductCard = ({ onAddToCart, product }: Props) => {
           {product.description}
         </Card.Text>
         <span className="price">${product.price} {product.unit}</span>
-        <Button className="cart-button" variant="outline-primary" onClick={() => onAddToCart(product)}>Add to Cart</Button>
+        <Button className="cart-button" variant="outline-primary" onClick={() => dispatch(addToCart(product))}>Add to Cart</Button>
       </Card.Body>
     </Card>
   );
 };
 
-export default connector(ProductCard);
+export default ProductCard;

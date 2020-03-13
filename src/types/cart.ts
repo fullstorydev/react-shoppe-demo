@@ -1,13 +1,7 @@
 import { Product } from "./product";
 
 export const ADD_TO_CART = 'ADD_TO_CART';
-
-export interface AddToCartAction {
-  type: typeof ADD_TO_CART,
-  product: Product,
-}
-
-export type CartActionTypes = AddToCartAction;
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 
 export interface CartState {
   products: Product[],

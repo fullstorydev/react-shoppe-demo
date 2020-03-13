@@ -1,14 +1,15 @@
 import {
     ADD_TO_CART,
-    CartActionTypes,
     CartState,
-  } from '../../types/cart';
+} from '../../types/cart';
+
+import { AppActions } from '../../actions';
   
   const initialState : CartState = {
     products: [],
   }
   
-  const cartReducer = (state = initialState, action: CartActionTypes) : CartState => {
+  const cartReducer = (state = initialState, action: AppActions) : CartState => {
     switch(action.type) {
       case ADD_TO_CART:
         return {
