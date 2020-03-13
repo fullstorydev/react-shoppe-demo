@@ -11,16 +11,16 @@ function App() {
     <div>
       <Navigation />
       <Switch>
-        <Route path='/cart'>
+        <Route path="/cart">
           <Cart />
         </Route>
-        <Route path='/checkout'>
+        <Route path="/checkout">
           <Checkout />
         </Route>
-        <Route path='/thankyou'>
+        <Route path="/thankyou">
           <ThankYou />
         </Route>
-        <Route path='/'>
+        <Route path="/">
           <Products />
         </Route>
       </Switch>
