@@ -3,13 +3,26 @@ import {
   Card,
   Button,
 } from 'react-bootstrap';
+import { connect, ConnectedProps } from 'react-redux'
+import { addToCart } from '../actions/cart';
 import { Product } from '../types/product';
 
-type Props = {
+const mapDispatch = {
+  onAddToCart: (product: Product) => addToCart(product),
+};
+
+const connector = connect(
+  null,
+  mapDispatch
+);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+type Props = PropsFromRedux & {
   product: Product
 };
 
-const ProductCard = ({ product }: Props) => {  
+const ProductCard = ({ onAddToCart, product }: Props) => {  
   return(
     <Card>
       <div style={{backgroundImage: `url(${product.image})`}} className="product-image"></div>
@@ -19,10 +32,10 @@ const ProductCard = ({ product }: Props) => {
           {product.description}
         </Card.Text>
         <span className="price">${product.price} {product.unit}</span>
-        <Button className="cart-button" variant="outline-primary" onClick={() => {}}>Add to Cart</Button>
+        <Button className="cart-button" variant="outline-primary" onClick={() => onAddToCart(product)}>Add to Cart</Button>
       </Card.Body>
     </Card>
   );
 };
 
-export default ProductCard;
+export default connector(ProductCard);
