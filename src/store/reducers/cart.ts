@@ -1,23 +1,19 @@
-import {
-    ADD_TO_CART,
-    CartState,
-  } from '../../types/cart';
+import { combineReducers } from 'redux';
+import { CartActionTypes } from '../../actions/cart';  
+import { ADD_TO_CART } from '../../types/cart';
+import { Product } from '../../types/product';
 
-import { CartActionTypes } from '../../actions/cart';
-  
-const initialState : CartState = {
-  products: [],
-}
-
-const cartReducer = (state = initialState, action: CartActionTypes) : CartState => {
+const productsReducer = (state: Product[] = [], action: CartActionTypes): Product[] => {
   switch(action.type) {
     case ADD_TO_CART:
-      return {
-        products: [...state.products, action.product],
-      };
+      return [...state, action.product];
     default:
       return state;
   }
-};
+}
+
+const cartReducer = combineReducers({
+   products: productsReducer,
+})
 
 export default cartReducer;
