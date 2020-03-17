@@ -1,13 +1,19 @@
-import { Product } from "../types/product";
-import { ADD_TO_CART, CartActionTypes } from '../types/cart';
+import { Dispatch } from 'redux';
+import { Product } from '../types/product';
+import { ADD_TO_CART } from '../types/cart';
+import { createAction } from '../types/helpers';
+
+export type CartDispatch = Dispatch<CartActionTypes>;
+
+export type CartActionTypes = ReturnType<typeof addToCart>
 
 // TODO: update cart in local storage with a cart service
 
-export const addToCart = (product: Product) : CartActionTypes => {
+export const addToCart = (product: Product)  => {
   // NOTE: this will be removed in the next PR
   console.log(`product added: ${JSON.stringify(product)}`);
-  return {
+  return createAction({
     type: ADD_TO_CART,
     product,
-  }
+  });
 };

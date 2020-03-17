@@ -14,7 +14,7 @@ type ProductGridProps = {
 
 const BOOTSTRAP_GRID_WIDTH = 12;
 
-const ProductGrid = ({ productList, columnCount = 3 }: ProductGridProps) => {
+const ProductGrid : React.FC<ProductGridProps> = ({ productList, columnCount = 3 }) => {
   let productRows: Product[][] = [];
   let productColumns: Product[] = [];
   productList.forEach(product => {    
