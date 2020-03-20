@@ -3,7 +3,8 @@ import {
   Card,
   Button,
 } from 'react-bootstrap';
-import { addToCart, CartDispatch } from '../actions/cart';
+import { AppDispatch } from '../actions';
+import { addToCart } from '../actions/cart';
 import { Product } from '../types/product';
 import { useDispatch } from 'react-redux'
 
@@ -12,7 +13,7 @@ type Props = {
 };
 
 const ProductCard: React.FC<Props> = ({ product }) => {  
-  const dispatch = useDispatch<CartDispatch>();
+  const dispatch = useDispatch<AppDispatch>();
   return(
     <Card>
       <div style={{backgroundImage: `url(${product.image})`}} className="product-image"></div>

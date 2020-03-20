@@ -1,9 +1,6 @@
-import { Dispatch } from 'redux';
 import { Product } from '../types/product';
 import { CartTypes } from '../types/cart';
 import { createAction } from '../types/helpers';
-
-export type CartDispatch = Dispatch<CartActionTypes>;
 
 export type CartActionTypes = ReturnType<typeof addToCart>
 
