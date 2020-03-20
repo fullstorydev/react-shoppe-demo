@@ -11,7 +11,7 @@ const CartButton = () => {
 
   return(
     <Link to="/cart">
-      <Button onClick={() => {}}>My Cart {products.length} <span className='fa fa-shopping-cart'></span></Button>
+      <Button>My Cart {products.length} <span className='fa fa-shopping-cart'></span></Button>
     </Link>
   );
 };
