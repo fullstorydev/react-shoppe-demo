@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import CartButton from './CartButton';
 
 const Navigation = () => {
   return (
@@ -8,7 +9,7 @@ const Navigation = () => {
       <Navbar.Brand><Link to="/" className="header-link">The Fruit Shoppe</Link></Navbar.Brand>
       <Nav className="mr-auto"></Nav>
       <Nav>
-      <Link to="/cart">Cart</Link>
+        <CartButton />
       </Nav>
     </Navbar>
   );
