@@ -7,7 +7,7 @@ import { Product } from '../types/product';
 
 const CartButton = () => {
  
-  const products = useSelector<AppState, Product[]>(state => state.cartState.products);
+  const products = useSelector((state: AppState) => state.cartState.products);
 
   return(
     <Link to="/cart">
