@@ -3,10 +3,18 @@ import { AppActions } from '../../actions';
 import { CartTypes } from '../../types/cart';
 import { Product } from '../../types/product';
 
+const sortByTitle = (prod1: Product, prod2: Product) => {
+  if (prod1.title > prod2.title) return 1;
+  if (prod1.title < prod2.title) return -1;
+  return 0;
+}
+
 const productsReducer = (state: Product[] = [], action: AppActions): Product[] => {
   switch(action.type) {
     case CartTypes.AddToCart:
-      return [...state, action.product];
+      return [...state, action.product].sort(sortByTitle);
+      case CartTypes.RemoveFromCart:
+        return state.filter((_, index) => index !== action.location)
     default:
       return state;
   }
