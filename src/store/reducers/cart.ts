@@ -4,9 +4,7 @@ import { CartTypes } from '../../types/cart';
 import { Product } from '../../types/product';
 
 const sortByTitle = (prod1: Product, prod2: Product) => {
-  if (prod1.title > prod2.title) return 1;
-  if (prod1.title < prod2.title) return -1;
-  return 0;
+  return prod1.title.localeCompare(prod2.title);
 }
 
 const productsReducer = (state: Product[] = [], action: AppActions): Product[] => {
