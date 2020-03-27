@@ -3,7 +3,6 @@ import { Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AppState } from '../store';
-import { Product } from '../types/product';
 
 const CartButton = () => {
  
