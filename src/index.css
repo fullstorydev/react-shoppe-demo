@@ -30,3 +30,13 @@ a.header-link {
   background-position: center;
   background-size: cover;
 }
+
+.cart-price {
+  float: right;
+}
+
+.remove-item {
+  display: inline-block;
+  padding-left: 1rem;
+  cursor: pointer;
+}
