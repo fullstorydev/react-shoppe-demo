@@ -13,9 +13,9 @@ export const addToCart = (product: Product)  => {
   });
 };
 
-export const removeFromCart = (location: number) => {
+export const removeFromCart = (index: number) => {
   return createAction({
     type: CartTypes.RemoveFromCart,
-    location,
+    index,
   });
 };
