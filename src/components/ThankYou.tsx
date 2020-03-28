@@ -1,11 +1,24 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import {
+  Container,
+  Col,
+  Row,
+  Jumbotron
+} from 'react-bootstrap';
 
 const ThankYou = () => {
-  return (
+  return(
     <Container>
-      <h1>Thank You</h1>
+      <Row>
+        <Col>
+          <Jumbotron>
+            <h1>Thanks!</h1>
+            <p className="lead">We hope you enjoy your fruit.</p>
+          </Jumbotron>
+        </Col>
+      </Row>    
     </Container>
+   
   );
 };
 
