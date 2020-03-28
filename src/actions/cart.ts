@@ -1,3 +1,4 @@
+import { History } from 'history';
 import { Product } from '../types/product';
 import { CartTypes } from '../types/cart';
 import { CheckoutData } from '../types/checkout';
@@ -23,8 +24,9 @@ export const removeFromCart = (index: number) => {
   });
 };
 
-export const checkoutCart = (checkoutData: CheckoutData) => {
-  //TODO: inlcude a 'purchase' service call
+export const checkoutCart = (history: History, checkoutData: CheckoutData) => {
+  //TODO: include a 'purchase' service call
+  history.push('/thankyou');
   return createAction({
     type: CartTypes.CheckoutCart,
   });
