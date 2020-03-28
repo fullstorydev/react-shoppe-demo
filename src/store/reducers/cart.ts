@@ -11,8 +11,10 @@ const productsReducer = (state: Product[] = [], action: AppActions): Product[] =
   switch(action.type) {
     case CartTypes.AddToCart:
       return [...state, action.product].sort(sortByTitle);
-      case CartTypes.RemoveFromCart:
-        return state.filter((_, index) => index !== action.index)
+    case CartTypes.RemoveFromCart:
+      return state.filter((_, index) => index !== action.index);
+    case CartTypes.CheckoutCart:
+      return [];
     default:
       return state;
   }
