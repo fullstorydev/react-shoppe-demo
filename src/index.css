@@ -15,6 +15,10 @@ a.header-link {
   padding: 3rem 1rem 3rem 1rem;
 }
 
+.checkout-container .row {
+  padding: 2rem 0 0 0;
+}
+
 .card {
   margin-top: 3rem;
 }
