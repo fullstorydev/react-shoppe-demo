@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import {  
-  Col,
-  Row,
-  Form,
-} from 'react-bootstrap';
+import { Col, Row, Form } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
+import { AppDispatch } from '../actions';
+import { checkoutCart } from '../actions/cart';
 import { PaymentInfo, ContactInfo, Address, CheckoutData } from '../types/checkout';
 
-
 const CheckoutForm = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const history = useHistory();
   const [firstName, setFirstName] = useState();
   const [lastName, setEmail] = useState();
   const [email, setLastName] = useState();
@@ -53,7 +54,7 @@ const CheckoutForm = () => {
       products: [],
     };
 
-    //TODO: dispatch checkout action here
+    dispatch(checkoutCart(history, checkoutData));
   };
 
   return(
