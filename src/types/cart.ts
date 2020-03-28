@@ -3,7 +3,6 @@ export enum CartTypes {
   RemoveFromCart = 'REMOVE_FROM_CART',
 };
 
-// https://patrickdesjardins.com/blog/how-to-set-and-read-bitwise-enum-values-in-typescript
 export enum CartViewModifier {
   NONE,
   DELETE,
