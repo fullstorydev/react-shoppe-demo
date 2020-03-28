@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
 
+document.body.className = 'bg-light';
+
 ReactDOM.render(
   <Router>
     <Provider store={store}>
