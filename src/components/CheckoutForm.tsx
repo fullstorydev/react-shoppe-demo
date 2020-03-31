@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Row, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
-import { AppDispatch } from '../actions';
+import { AppDispatch } from '../store';
 import { checkoutCart } from '../actions/cart';
 import { PaymentInfo, ContactInfo, Address, CheckoutData } from '../types/checkout';
 

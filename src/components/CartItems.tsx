@@ -1,8 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { ListGroup } from 'react-bootstrap';
-import { AppDispatch } from '../actions';
-import { AppState } from "../store";
+import { AppState, AppDispatch } from '../store';
 import { CartViewModifier } from '../types/cart';
 import { removeFromCart } from '../actions/cart';
 
