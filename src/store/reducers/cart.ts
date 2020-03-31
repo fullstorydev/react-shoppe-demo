@@ -20,8 +20,18 @@ const productsReducer = (state: Product[] = [], action: AppActions): Product[] =
   }
 }
 
+const checkoutReducer = (state: Product[] = [], action: AppActions): Product[] => {
+  switch(action.type) {
+    case CartTypes.CompletePurchase:
+      return action.purchasedProducts;
+    default:
+      return state;
+  }
+}
+
 const cartReducer = combineReducers({
    products: productsReducer,
+   purchasedProducts: checkoutReducer,
 })
 
 export default cartReducer;

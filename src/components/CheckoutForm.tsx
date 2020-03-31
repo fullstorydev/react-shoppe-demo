@@ -51,7 +51,6 @@ const CheckoutForm = () => {
     const checkoutData: CheckoutData = {
       contactInfo,
       paymentInfo,
-      products: [],
     };
 
     dispatch(checkoutCart(checkoutData))

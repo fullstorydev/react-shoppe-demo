@@ -26,5 +26,4 @@ export interface ContactInfo {
 export interface CheckoutData {
   paymentInfo: PaymentInfo;
   contactInfo: ContactInfo;
-  products: Product[];
 }

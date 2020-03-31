@@ -2,7 +2,7 @@ import { Product } from '../types/product';
 import { CartTypes } from '../types/cart';
 import { CheckoutData } from '../types/checkout';
 import { createAction } from '../types/helpers';
-import { AppDispatch } from '../store';
+import { AppDispatch, AppState } from '../store';
 import { makePurchase } from '../services/checkout';
 
 export type CartActionTypes = ReturnType<typeof addToCart> 
@@ -25,14 +25,16 @@ export const removeFromCart = (index: number) => {
   });
 };
 
-export const completePurchase = () => {
+export const completePurchase = (purchasedProducts: Product[]) => {
   return createAction({
     type: CartTypes.CompletePurchase,
+    purchasedProducts,
   });
 }
 
 export const checkoutCart = (checkoutData: CheckoutData) => {
-  return (dispatch: AppDispatch) => {
-    return makePurchase(checkoutData).then(() => dispatch(completePurchase()));
+  return (dispatch: AppDispatch, getState: () => AppState) => {
+    const purchasedProducts = getState().cartState.products;
+    return makePurchase(checkoutData, purchasedProducts).then(() => dispatch(completePurchase(purchasedProducts)));
   }
 }
