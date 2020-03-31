@@ -3,6 +3,7 @@ import { CartTypes } from '../types/cart';
 import { CheckoutData } from '../types/checkout';
 import { createAction } from '../types/helpers';
 import { AppDispatch } from '../store';
+import { makePurchase } from '../services/checkout';
 
 export type CartActionTypes = ReturnType<typeof addToCart> 
   | ReturnType<typeof removeFromCart>
@@ -32,9 +33,6 @@ export const completePurchase = () => {
 
 export const checkoutCart = (checkoutData: CheckoutData) => {
   return (dispatch: AppDispatch) => {
-    // TODO: make service call with checkoutData
-    return Promise.resolve().then(() => {      
-      dispatch(completePurchase())
-    })
+    return makePurchase(checkoutData).then(() => dispatch(completePurchase()));
   }
 }
