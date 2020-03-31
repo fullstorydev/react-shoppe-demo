@@ -54,7 +54,11 @@ const CheckoutForm = () => {
       products: [],
     };
 
-    dispatch(checkoutCart(checkoutData)).then(() => history.push('/thankyou'));
+    dispatch(checkoutCart(checkoutData))
+      .then(() => history.push('/thankyou'))
+      .catch((err: Error) => {
+        console.error(err.message);
+      });
   };
 
   return(
