@@ -1,12 +1,12 @@
-import { History } from 'history';
 import { Product } from '../types/product';
 import { CartTypes } from '../types/cart';
 import { CheckoutData } from '../types/checkout';
 import { createAction } from '../types/helpers';
+import { AppDispatch } from '../store';
 
 export type CartActionTypes = ReturnType<typeof addToCart> 
   | ReturnType<typeof removeFromCart>
-  | ReturnType<typeof checkoutCart>;
+  | ReturnType<typeof completePurchase>;
 
 // TODO: update cart in local storage with a cart service
 
@@ -24,10 +24,17 @@ export const removeFromCart = (index: number) => {
   });
 };
 
-export const checkoutCart = (history: History, checkoutData: CheckoutData) => {
-  //TODO: include a 'purchase' service call
-  history.push('/thankyou');
+export const completePurchase = () => {
   return createAction({
-    type: CartTypes.CheckoutCart,
+    type: CartTypes.CompletePurchase,
   });
-};
+}
+
+export const checkoutCart = (checkoutData: CheckoutData) => {
+  return (dispatch: AppDispatch) => {
+    // TODO: make service call with checkoutData
+    return Promise.resolve().then(() => {      
+      dispatch(completePurchase())
+    })
+  }
+}

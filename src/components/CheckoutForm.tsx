@@ -54,7 +54,7 @@ const CheckoutForm = () => {
       products: [],
     };
 
-    dispatch(checkoutCart(history, checkoutData));
+    dispatch(checkoutCart(checkoutData)).then(() => history.push('/thankyou'));
   };
 
   return(
