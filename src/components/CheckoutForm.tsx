@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { AppDispatch } from '../store';
 import { checkoutCart } from '../actions/cart';
-import { PaymentInfo, ContactInfo, Address, CheckoutData } from '../types/checkout';
+import { PaymentInfo, ContactInfo, Address, BillingInfo } from '../types/checkout';
 
 const CheckoutForm = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -48,12 +48,12 @@ const CheckoutForm = () => {
       billingAddress: address,
     };
 
-    const checkoutData: CheckoutData = {
+    const billingInfo: BillingInfo = {
       contactInfo,
       paymentInfo,
     };
 
-    dispatch(checkoutCart(checkoutData))
+    dispatch(checkoutCart(billingInfo))
       .then(() => history.push('/thankyou'))
       .catch((err: Error) => {
         console.error(err.message);

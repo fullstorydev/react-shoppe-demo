@@ -1,5 +1,3 @@
-import { Product } from './product';
-
 export interface PaymentInfo {
   shippingAddress: Address;
   billingAddress: Address;
@@ -23,7 +21,7 @@ export interface ContactInfo {
   email: string;
 };
 
-export interface CheckoutData {
+export interface BillingInfo {
   paymentInfo: PaymentInfo;
   contactInfo: ContactInfo;
 }

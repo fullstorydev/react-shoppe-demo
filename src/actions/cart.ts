@@ -1,6 +1,6 @@
 import { Product } from '../types/product';
 import { CartTypes } from '../types/cart';
-import { CheckoutData } from '../types/checkout';
+import { BillingInfo } from '../types/checkout';
 import { createAction } from '../types/helpers';
 import { AppDispatch, AppState } from '../store';
 import { makePurchase } from '../services/checkout';
@@ -32,9 +32,9 @@ export const completePurchase = (purchasedProducts: Product[]) => {
   });
 }
 
-export const checkoutCart = (checkoutData: CheckoutData) => {
+export const checkoutCart = (billingInfo: BillingInfo) => {
   return (dispatch: AppDispatch, getState: () => AppState) => {
     const purchasedProducts = getState().cartState.products;
-    return makePurchase(checkoutData, purchasedProducts).then(() => dispatch(completePurchase(purchasedProducts)));
+    return makePurchase(billingInfo, purchasedProducts).then(() => dispatch(completePurchase(purchasedProducts)));
   }
 }
