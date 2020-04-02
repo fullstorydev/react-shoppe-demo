@@ -1,3 +1,4 @@
+import * as FullStory from '@fullstory/browser';
 import React from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
@@ -9,6 +10,8 @@ import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
 
 document.body.className = 'bg-light';
+
+FullStory.init({ orgId: process.env.REACT_APP_FULLSTORY_ORG });
 
 ReactDOM.render(
   <Router>
