@@ -2,11 +2,12 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk, { ThunkDispatch } from 'redux-thunk';
 import rootReducer from './reducers';
 import { AppActions } from '../actions';
+import { makeMiddleware } from './recordAction';
 
 const store = createStore(
   rootReducer,
   {},
-  applyMiddleware(thunk)
+  applyMiddleware(makeMiddleware(), thunk)
 );
 
 export default store;
