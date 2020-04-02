@@ -914,6 +914,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
+"@fullstory/browser@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@fullstory/browser/-/browser-1.4.0.tgz#0424a17c0186bb563d92f2749178b729ca712e2d"
+  integrity sha512-bmdIMV4tNTJV6KqqE2fAqA+bDwoYeQqwQKSrOFzDVSgrHbvM/tnvuzizvrb2M53O0BE1XGFcPXyWflhZb7A/0g==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
