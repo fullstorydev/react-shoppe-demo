@@ -1,11 +1,13 @@
 import * as FullStory from '@fullstory/browser';
-import { Middleware, Dispatch } from 'redux';
+import { Middleware } from 'redux';
 
-export const makeMiddleware = <S, D extends Dispatch>(): Middleware<{}, S, D> => {
-  return () => next => action => {
-    if (typeof action !== 'function') {
-      FullStory.log(action.type);  
-    }
-    return next(action);
-  };
+const recordAction: Middleware = () => next => action => {
+  if (typeof action !== 'function') {
+    FullStory.log(action.type);
+  } else if (typeof action === 'function') {
+    FullStory.log('Action is a thunk');
+  }
+  return next(action);
 };
+
+export default recordAction;
