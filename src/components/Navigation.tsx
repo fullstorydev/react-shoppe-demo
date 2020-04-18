@@ -5,7 +5,7 @@ import CartButton from './CartButton';
 
 const Navigation = () => {
   return (
-    <Navbar bg="dark" expand="lg" fixed="top">
+    <Navbar expand="lg" fixed="top">
       <Navbar.Brand><Link to="/" className="header-link">Reactshoppe</Link></Navbar.Brand>
       <Nav className="mr-auto"></Nav>
       <Nav>
