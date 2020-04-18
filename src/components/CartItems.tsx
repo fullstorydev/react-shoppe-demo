@@ -16,7 +16,7 @@ const CartItems: React.FC<Props> = ({ cartView = CartViewModifier.NONE }) => {
   return (
     <ListGroup>
       { products.map((product, i) => (
-        <ListGroup.Item key={product.id}>
+        <ListGroup.Item key={i}>
           {product.title}
           <span className='cart-price'>${product.price} <span className='text-muted'>{product.unit}</span>
             {cartView === CartViewModifier.DELETE &&

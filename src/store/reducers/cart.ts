@@ -12,7 +12,7 @@ const productsReducer = (state: Product[] = [], action: AppActions): Product[] =
     case CartTypes.AddToCart:
       return [...state, action.product].sort(sortByTitle);
     case CartTypes.RemoveFromCart:
-      return state.filter((_, index) => index !== action.index);
+      return state.filter((_, index) => index !== action.index).sort(sortByTitle);
     case CartTypes.CompletePurchase:
       return [];
     default:
