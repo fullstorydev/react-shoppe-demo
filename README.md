@@ -31,7 +31,7 @@ These are FullStory's privacy controls in action. Learn more about how privacy c
 
 ## Bonus Features
 
-Every Redux action is logged to the FullStory console using the [FS.log() function](https://developer.fullstory.com/logging). You can view the action sequence in the [FullStory Console](https://help.fullstory.com/hc/en-us/articles/360020828533-How-do-I-use-the-FullStory-Console-) during replay to help trouble-shoot any issues that might be related to data flow:
+Every Redux action is logged to the FullStory console using the [FS.log() function](https://developer.fullstory.com/logging). You can view the action sequence in the [FullStory Console](https://help.fullstory.com/hc/en-us/articles/360020828533-How-do-I-use-the-FullStory-Console-) during replay to help troubleshoot any issues that might be related to data flow:
 
 - Actions running out of sequence
 - Actions not occuring at all
