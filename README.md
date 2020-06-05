@@ -10,7 +10,7 @@ Reactshoppe uses [Create React App](https://create-react-app.dev/docs/adding-typ
 
 - You'll need to have [node.js](https://nodejs.org/) installed on your machine and you'll need a [FullStory account](https://www.fullstory.com/plans/).
 - Once you've cloned this repo, `cd` into the root of the project (the same directory with the `package.json` file).
-- Run `npm install` or `yarn install`, depending on which package manager you're using.
+- Run `npm install`
 - Copy the .env_sample file to .env and update the `REACT_APP_FULLSTORY_ORG` with your FullStory Org Id. Find out how to get your Org Id [here](https://help.fullstory.com/hc/en-us/articles/360047075853).
 
 ## Getting Started
