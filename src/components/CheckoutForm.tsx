@@ -9,19 +9,19 @@ import { PaymentInfo, ContactInfo, Address, BillingInfo } from '../types/checkou
 const CheckoutForm = () => {
   const dispatch = useDispatch<AppDispatch>();
   const history = useHistory();
-  const [firstName, setFirstName] = useState();
-  const [lastName, setEmail] = useState();
-  const [email, setLastName] = useState();
-  const [street1, setStreet1] = useState();
-  const [street2, setStreet2] = useState();
-  const [country, setCountry] = useState();
-  const [state, setState] = useState();
-  const [zip, setZip] = useState();
+  const [firstName, setFirstName] = useState<string>();
+  const [lastName, setEmail] = useState<string>();
+  const [email, setLastName] = useState<string>();
+  const [street1, setStreet1] = useState<string>();
+  const [street2, setStreet2] = useState<string>();
+  const [country, setCountry] = useState<string>();
+  const [state, setState] = useState<string>();
+  const [zip, setZip] = useState<string>();
 
-  const [ccName, setCcName] = useState();
-  const [ccNumber, setCcNumber] = useState();
-  const [ccExpiration, setCcExpiration] = useState();
-  const [ccCVV, setCcCVV] = useState();
+  const [ccName, setCcName] = useState<string>();
+  const [ccNumber, setCcNumber] = useState<string>();
+  const [ccExpiration, setCcExpiration] = useState<string>();
+  const [ccCVV, setCcCVV] = useState<string>();
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
