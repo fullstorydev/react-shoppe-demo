@@ -1,3 +1,7 @@
+**Deprecation Notice**
+
+As of February 22nd, 2024, this repository will no longer have any maintenance performed, but will remain published in its current form for the time being. Please be sure to consider this when utilizing any of the information & code found within.
+
 # Reactshoppe
 
 Running [FullStory](https://www.fullstory.com/) in a React + Redux + TypeScript application.
